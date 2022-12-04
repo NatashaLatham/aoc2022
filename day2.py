@@ -4,7 +4,7 @@ import numpy as np
 data = read_file('day2.txt')
 # print(data)
 
-# Extract your and opponent choice
+# Extract score for your choice
 choice_score = {
     "A": 1,
     "B": 2,
@@ -40,13 +40,15 @@ def extract_my_choice_score(game_round):
     return choice_score[game_round[2]]
 
 def calculate_score(game_round):
-    if(win_match[game_round] == -1): # lose
+    match_score = win_match[game_round]
+
+    if(match_score == -1): # lose
         return extract_my_choice_score(game_round)
     
-    if(win_match[game_round] == 0): # draw
+    if(match_score == 0): # draw
         return extract_my_choice_score(game_round) + 3
     
-    if(win_match[game_round] == 1): # win
+    if(match_score == 1): # win
         return extract_my_choice_score(game_round) + 6
     
 my_total_score = 0
@@ -71,6 +73,7 @@ desired_outcome = {
     "Z": 1, 
 }
 
+# your choice based on opp and desired outcome
 my_choice = {
     'A X' : 'Z', 
     'A Y' : 'X', 
@@ -93,13 +96,15 @@ def extract_match_score(game_round):
     return desired_outcome[game_round[2]]
 
 def calculate_score_2(game_round):
-    if(extract_match_score(game_round) == -1): # lose
+    match_score = extract_match_score(game_round)
+
+    if(match_score == -1): # lose
         return extract_my_choice_score_2(game_round)
     
-    if(extract_match_score(game_round) == 0): # draw
+    if(match_score == 0): # draw
         return extract_my_choice_score_2(game_round) + 3
     
-    if(extract_match_score(game_round) == 1): # win
+    if(match_score == 1): # win
         return extract_my_choice_score_2(game_round) + 6
     
 my_total_score = 0
