@@ -1,5 +1,4 @@
 from toolbox.data_reader import read_file
-import numpy as np
 
 data = read_file('day3.txt')
 # print(data)
@@ -44,7 +43,10 @@ print(sum_of_priorities)
 # part 2
 
 def findTypeInItemLists(list1, list2, list3):    
-    return set([x1 for x1 in list1 for x2 in list2 for x3 in list3 if (ord(x1) == ord(x2) and ord(x1) == ord(x3))]).pop()
+    return set([x1 for x1 in list1 
+                   for x2 in list2 
+                   for x3 in list3 
+                   if (ord(x1) == ord(x2) and ord(x1) == ord(x3))]).pop()
 
 sum_of_priorities = 0
 counter = 0
