@@ -39,7 +39,8 @@ for pairs in data:
     section_x = list_of_pairs[0]
     section_y = list_of_pairs[1]
     
-    if(is_section_x_contained_in_section_y(section_x, section_y) or is_section_x_contained_in_section_y(section_y, section_x)):
+    if(is_section_x_contained_in_section_y(section_x, section_y) or 
+       is_section_x_contained_in_section_y(section_y, section_x)):
         sum_of_fully_contained_sections += 1
 
 t.stop()
@@ -57,7 +58,7 @@ def is_section_x_overlapping_with_section_y(section_x, section_y):
     y1 = int(sec_y[0])
     y2 = int(sec_y[1])
 
-    if((x1 >= y1 and x1 <= y2) or ((x2 >= y1 and x2 <= y2))):
+    if((x1 >= y1 and x1 <= y2) or (x2 >= y1 and x2 <= y2)):
         return True
     
     return False
@@ -73,7 +74,8 @@ for pairs in data:
     section_x = list_of_pairs[0]
     section_y = list_of_pairs[1]
 
-    if(is_section_x_overlapping_with_section_y(section_x, section_y) or is_section_x_overlapping_with_section_y(section_y, section_x)):
+    if(is_section_x_overlapping_with_section_y(section_x, section_y) or 
+       is_section_x_overlapping_with_section_y(section_y, section_x)):
         sum_of_fully_contained_sections += 1
 
 t.stop()
