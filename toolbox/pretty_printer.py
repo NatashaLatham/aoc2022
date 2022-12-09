@@ -11,3 +11,11 @@ def print_solution_1(solution, time):
 
 def print_solution_2(solution, time):
     print_solution(solution, 2, time)
+
+
+def print_matrix(m, name=""):
+    print("")
+    print(f"=== Matrix {name} ===")
+    for x in m:
+        print(x)
+    print("")
